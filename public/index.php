@@ -40,16 +40,16 @@
             <?php foreach ($products as $i => $product): ?>
                 <tr>
                     <td class="text-left py-3 px-4"><?= $i + 1 ?></td>
-                    <td class="text-left py-3 px-4"></td>
+                    <td class="text-left py-3 px-4 h-8 w-8 "><img src="<?= $product['image'] ?>" alt="Product Image"></td>
                     <td class="text-left py-3 px-4"><?= $product['title'] ?></td>
                     <td class="text-left py-3 px-4"><?= $product['price'] ?></td>
                     <td class="text-left py-3 px-4"><?= $product['create_date'] ?></td>
                     <td class="text-left py-3 px-4">
-                        <button class="text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                        <button class="text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit"
                         >
                             Edit
                         </button>
-                        <button class="text-pink-500 bg-transparent border border-solid border-pink-500 hover:bg-pink-500 hover:text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                        <button class="text-pink-500 bg-transparent border border-solid border-pink-500 hover:bg-pink-500 hover:text-white active:bg-pink-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit"
                         >
                             Delete
                         </button>
