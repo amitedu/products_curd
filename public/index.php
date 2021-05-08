@@ -49,10 +49,14 @@
                         >
                             Edit
                         </button>
-                        <button class="text-pink-500 bg-transparent border border-solid border-pink-500 hover:bg-pink-500 hover:text-white active:bg-pink-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit"
-                        >
-                            Delete
-                        </button>
+                        <form action="delete.php" method="post">
+                            <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
+                            <button class="text-pink-500 bg-transparent border border-solid border-pink-500 hover:bg-pink-500 hover:text-white active:bg-pink-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="submit"
+                            >
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
