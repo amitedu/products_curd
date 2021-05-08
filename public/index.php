@@ -21,8 +21,8 @@
 </head>
 <body>
 <!-- component -->
-<div class="md:px-32 py-8 w-full">
-    <h1 class="text-white font-bold text-center bg-red-200 py-2 mb-6">Products CRUD</h1>
+<div class="md:px-32 py-8 w-full mt-6">
+    <h1 class="text-white font-bold text-center bg-red-300 py-2 mb-6">Products CRUD</h1>
     <a class="bg-green-500 mb-6 px-4 py-2 text-white rounded inline-block font-bold align-left" href="create.php">Create</a>
     <div class="shadow overflow-hidden rounded border-b border-gray-200">
         <table class="min-w-full bg-white">
@@ -45,10 +45,9 @@
                     <td class="text-left py-3 px-4"><?= $product['price'] ?></td>
                     <td class="text-left py-3 px-4"><?= $product['create_date'] ?></td>
                     <td class="text-left py-3 px-4">
-                        <button class="text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit"
-                        >
+                        <a href="update.php?id=<?php echo $product['id'] ?>" class="inline-block text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                             Edit
-                        </button>
+                        </a>
                         <form action="delete.php" method="post">
                             <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
                             <button class="text-pink-500 bg-transparent border border-solid border-pink-500 hover:bg-pink-500 hover:text-white active:bg-pink-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
