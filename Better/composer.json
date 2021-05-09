@@ -1,0 +1,15 @@
+{
+    "name": "amitedu/products_crud",
+    "authors": [
+        {
+            "name": "amit",
+            "email": "amitedu21@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    }
+}
