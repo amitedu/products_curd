@@ -1,7 +1,8 @@
-/node_modules
+database.php
 /coverage
 /lib
 /example
 tailwind.config.js
-.idea/
+/node_modules
 images/
+.idea/

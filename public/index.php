@@ -1,7 +1,7 @@
 <?php
 
-$pdo = new PDO("mysql:host=localhost;dbname=products_curd;charset=utf8mb4", "root", "");
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+/** @var $pdo \PDO */
+require_once "../database.php";
 
 $search = $_GET['search'] ?? '';
 if ($search) {
@@ -16,17 +16,8 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Products CRUD</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<?php include_once "views/partials/header.php"; ?>
+
 <div class="md:px-32 py-8 w-full mt-6">
     <h1 class="text-white font-bold text-center bg-red-300 py-2 mb-6">Products CRUD</h1>
 
@@ -85,5 +76,5 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
         </table>
     </div>
 </div>
-</body>
-</html>
+
+<?php include_once "views/partials/footer.php"?>

@@ -6,8 +6,8 @@ if (!$productId) {
     exit();
 }
 
-$pdo = new PDO("mysql:host=localhost;dbname=products_curd;charset=utf8mb4", "root", "");
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+/** @var $pdo \PDO */
+require_once "../database.php";
 
 $statement = $pdo->prepare("DELETE FROM products WHERE id = :id");
 $statement->bindValue(':id', $productId);
