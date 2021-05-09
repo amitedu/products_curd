@@ -77,4 +77,4 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<?php include_once "views/partials/footer.php"?>
+<?php include_once "views/partials/footer.php" ?>

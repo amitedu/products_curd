@@ -1,8 +1,8 @@
-database.php
+Good/database.php
 /coverage
 /lib
 /example
-tailwind.config.js
+Good/tailwind.config.js
 /node_modules
 images/
 .idea/

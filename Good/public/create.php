@@ -36,4 +36,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php include_once "views/products/form.php" ?>
 
-<?php include_once "views/partials/footer.php"?>
+<?php include_once "views/partials/footer.php" ?>
