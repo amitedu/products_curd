@@ -1,11 +1,18 @@
 <?php
 
-    $pdo = new PDO("mysql:host=localhost;dbname=products_curd;charset=utf8mb4", "root", "");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo = new PDO("mysql:host=localhost;dbname=products_curd;charset=utf8mb4", "root", "");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+$search = $_GET['search'] ?? '';
+if ($search) {
+    $statement = $pdo->prepare("SELECT * FROM products WHERE title LIKE :title");
+    $statement->bindValue(':title', "%$search%");
+} else {
     $statement = $pdo->prepare('SELECT * FROM products ORDER BY create_date DESC;');
-    $statement->execute();
-    $products = $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+$statement->execute();
+$products = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -20,10 +27,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- component -->
 <div class="md:px-32 py-8 w-full mt-6">
     <h1 class="text-white font-bold text-center bg-red-300 py-2 mb-6">Products CRUD</h1>
-    <a class="bg-green-500 mb-6 px-4 py-2 text-white rounded inline-block font-bold align-left" href="create.php">Create</a>
+
+<!--    Create Button -->
+    <div class="flex justify-between"><a class="bg-green-500 mb-4 px-4 py-2 text-white rounded inline-block font-bold align-left"
+          href="index.php">Home</a>
+        <a class="bg-green-500 mb-4 px-4 py-2 text-white rounded inline-block font-bold align-left"
+           href="create.php">Add Product</a>
+    </div>
+
+<!--    search-->
+    <form action="" method="get" class="border border-solid rounded flex mb-4">
+        <input class="w-full rounded p-2" name="search" type="text" placeholder="Search product here...">
+        <button type="submit" class="bg-red-400 hover:bg-red-500 w-auto flex justify-end items-center text-white p-2 pl-4 pr-4">
+            search
+        </button>
+    </form>
+
+<!--    table -->
     <div class="shadow overflow-hidden rounded border-b border-gray-200">
         <table class="min-w-full bg-white">
             <thead class="bg-gray-800 text-white">

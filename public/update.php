@@ -19,12 +19,12 @@ $errors = [];
 $title = $product['title'];
 $description = $product['description'];
 $price = $product['price'];
+$imagePath = $product['image'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $price = $_POST['price'];
-    $imagePath = '';
 
     if (!$title) {
         $errors['title'] = 'Title field can not be empty';
@@ -48,16 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($image && $image['tmp_name']) {
             unlink($product['image']);
-        }
 
-        $folderName = 'images/' . bin2hex(random_bytes(5));
-        if (!mkdir($folderName)) {
-            echo 'Directory can not be created!';
-            exit;
-        }
-        $imagePath = $folderName . '/' . $image['name'];
+            $imageFolder = 'images/' . bin2hex(random_bytes(5));
+            if (!mkdir($imageFolder)) {
+                echo 'Directory can not be created!';
+                exit;
+            }
+            $imagePath = $imageFolder . '/' . $image['name'];
 
-        if ($image && $image['tmp_name']) {
             if (!move_uploaded_file($image['tmp_name'], $imagePath)) {
                 echo 'Move file to disk unsuccessful';
                 exit;

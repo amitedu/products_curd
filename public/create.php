@@ -79,11 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="flex mt-8 justify-center">
     <div class="md:w-1/2 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
         <h1 class="text-white font-bold text-center bg-red-300 py-2 mb-6">Create Product</h1>
+
         <?php if (!empty($errors)):?>
             <?php foreach ($errors as $error): ?>
                 <p class="text-red-500 text-xs italic"><?= $error ?></p>
             <?php endforeach; ?>
         <?php endif; ?>
+
         <form action="create.php" method="post" enctype="multipart/form-data">
             <div class="mb-4">
                 <label class="block text-grey-darker text-sm font-bold capitalize mb-2" for="username">
@@ -123,6 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </a>
             </div>
         </form>
+
     </div>
 </div>
 </body>
