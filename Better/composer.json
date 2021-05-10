@@ -6,7 +6,9 @@
             "email": "amitedu21@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+      "ext-pdo": "*"
+    },
     "autoload": {
         "psr-4": {
             "app\\": "./"
