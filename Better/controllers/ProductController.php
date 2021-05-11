@@ -4,17 +4,24 @@
 namespace app\controllers;
 
 
+use app\Router;
+
 class ProductController
 {
-    public function index()
+    public function index(Router $router)
     {
-        echo 'Index method';
+        $search = $_GET['search'] ?? '';
+        $products = $router->db->getProducts($search);
+
+        $router->renderView('/products/index', [
+            'products' => $products
+        ]);
     }
 
 
-    public function create()
+    public function create(Router $router)
     {
-        echo 'Create method wohooo';
+        $router->renderView('/products/create');
     }
 
 

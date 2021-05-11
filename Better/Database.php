@@ -12,7 +12,7 @@ class Database
     public function __construct()
     {
         $this->pdo = new PDO("mysql:host=localhost;dbname=products_curd;charset=utf8mb4", "root", "");
-        $$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
 
