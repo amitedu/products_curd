@@ -51,7 +51,7 @@ class Product
                 }
 
                 $imageFolder = 'images/' . bin2hex(random_bytes(5));
-                if (!mkdir(dirname(__DIR__ . '/../public/' . $imageFolder))) {
+                if (!mkdir(__DIR__ . '/../public/' . $imageFolder)) {
                     echo 'Directory can not be created!';
                     exit;
                 }
