@@ -1,5 +1,5 @@
 <div class="md:px-32 py-8 w-full mt-6">
-    <h1 class="text-white font-bold text-center bg-red-300 py-2 mb-6">Products CRUD</h1>
+    <h1 class="text-white font-bold text-center bg-red-300 py-2 mb-6">Products CRUD MVC</h1>
 
     <!--    Create Button -->
     <div class="flex justify-between"><a class="bg-green-500 mb-4 px-4 py-2 text-white rounded inline-block font-bold align-left"
