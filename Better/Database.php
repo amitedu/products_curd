@@ -56,6 +56,7 @@ class Database
         return $statement->execute();
     }
 
+
     public function getProductsById($productId)
     {
         $statement = $this->pdo->prepare("SELECT * FROM products WHERE id = :id");
@@ -63,6 +64,7 @@ class Database
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
+
 
     public function updateProduct(Product $product): bool
     {
