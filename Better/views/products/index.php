@@ -38,10 +38,10 @@
                     <td class="text-left py-3 px-4"><?= $product['price'] ?></td>
                     <td class="text-left py-3 px-4"><?= $product['create_date'] ?></td>
                     <td class="text-left py-3 px-4">
-                        <a href="update.php?id=<?php echo $product['id'] ?>" class="inline-block text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                        <a href="/products/update?id=<?php echo $product['id'] ?>" class="inline-block text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                             Edit
                         </a>
-                        <form action="delete.php" method="post">
+                        <form action="/products/delete" method="post">
                             <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
                             <button class="text-pink-500 bg-transparent border border-solid border-pink-500 hover:bg-pink-500 hover:text-white active:bg-pink-600 font-bold uppercase text-xs px-2 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                     type="submit"

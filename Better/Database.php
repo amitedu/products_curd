@@ -47,4 +47,34 @@ class Database
 
         return $statement->execute();
     }
+
+
+    public function deleteProduct($productId): bool
+    {
+        $statement = $this->pdo->prepare("DELETE FROM products WHERE id = :id");
+        $statement->bindValue(':id', $productId);
+        return $statement->execute();
+    }
+
+    public function getProductsById($productId)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM products WHERE id = :id");
+        $statement->bindValue(':id', $productId);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updateProduct(Product $product): bool
+    {
+        $statement = $this->pdo->prepare("UPDATE products SET title = :title, description = :description, 
+                  image = :image, price = :price WHERE id = :id"
+        );
+        $statement->bindValue(':id', $product->id);
+        $statement->bindValue(':title', $product->title);
+        $statement->bindValue(':description', $product->description);
+        $statement->bindValue(':image', $product->imagePath);
+        $statement->bindValue(':price', $product->price);
+
+        return $statement->execute();
+    }
 }

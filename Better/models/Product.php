@@ -64,13 +64,23 @@ class Product
             }
 
             $db = Database::$db;
+
+            if ($this->id) {
+                if (!$db->updateProduct($this)) {
+                    echo 'Product update on database unsuccessful';
+                    exit();
+                }
+                header('Location: /products');
+                exit();
+            }
+
             if (!$db->createProduct($this)) {
                 echo 'Product save on database unsuccessful';
                 exit();
             }
-
             header('Location: /products');
             exit();
+
         }
 
         return $errors;
